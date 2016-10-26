@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Match, Miss, Link } from 'react-router'
+import logo from './static/logo.svg';
+import './styles/App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+const App = () => (
+  <BrowserRouter>
+    <div className="App">
+      <div className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h2>Welcome to the React Meetup</h2>
       </div>
-    );
-  }
-}
+      <ul className="App-nav">
+        <li className="App-nav-item"><Link to="/">Home</Link></li>
+        <li className="App-nav-item"><Link to="/events">Events</Link></li>
+      </ul>
+    </div>
+  </BrowserRouter>
+);
 
 export default App;
