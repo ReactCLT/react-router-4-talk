@@ -1,0 +1,11 @@
+.event {
+  display: flex;
+}
+
+.rsvp-list {
+  flex: 1;
+}
+
+.member-info {
+  flex: 1;
+}
