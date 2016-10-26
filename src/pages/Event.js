@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Match, Link } from 'react-router';
+import Member from '../components/Member';
 import { getRsvps } from '../api/api';
 import '../styles/Event.css';
 
@@ -35,6 +36,19 @@ export default class Event extends React.Component {
             </Link>
           ))}
         </div>
+        {rsvps.length > 0 &&
+          <Match
+            pattern={`${pathname}/member/:memberId`}
+            render={matchProps => (
+              <div className="member-info">
+                <Member
+                  { ...matchProps }
+                  member={rsvps.find(rsvp => rsvp.member.id === +(matchProps.params.memberId)).member}
+                />
+              </div>
+            )}
+          />
+        }
       </div>
     );
   }
