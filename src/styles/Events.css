@@ -1,11 +1,16 @@
-.event {
+.event-list {
   display: flex;
+  padding: 4px 10%;
 }
 
-.rsvp-list {
+.event-name-col {
   flex: 1;
+  text-align: left;
+  border-bottom: 1px solid lightgrey;
 }
 
-.member-info {
+.event-time-col {
   flex: 1;
+  text-align: right;
+  border-bottom: 1px solid lightgrey;
 }
